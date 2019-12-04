@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
+import "@babel/polyfill";
 import App from "@app/containers/App";
 import {HMRProvider} from "@shared/store/HotProvider";
 import apiFactory from "@shared/client/http/api";

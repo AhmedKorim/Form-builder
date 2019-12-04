@@ -1,3 +1,4 @@
+import "@babel/polyfill"
 import * as React from 'react';
 import {hot} from "react-hot-loader";
 
@@ -6,8 +7,10 @@ class App extends React.Component {
         number: 1
     }
 
-    componentDidMount(): void {
-        console.log('hi');
+    async componentDidMount() {
+        // @ts-ignore
+        const wasam = await import("@lib/wasm-pdf/pkg");
+        console.log(wasam);
     }
 
     render() {

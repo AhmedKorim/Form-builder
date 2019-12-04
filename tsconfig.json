@@ -34,6 +34,9 @@
     ],
     "rootDir": "src",
     "paths": {
+      "@lib": [
+        "./../lib/*"
+      ],
       "@app/*": [
         "app/*"
       ],
