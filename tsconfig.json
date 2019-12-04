@@ -22,7 +22,7 @@
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es2017",
+    "target": "es2015",
     "inlineSourceMap": true,
     "inlineSources": false,
     "outDir": "build",

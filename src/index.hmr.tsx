@@ -8,7 +8,31 @@ import getStore from "@app/store/store";
 import {getStoreRef} from "@shared/store/createStore";
 
 declare const module: NodeModule & { hot: any };
-console.log(process.env);
+
+
+window.generatePDF = ( data ) => {
+    const blob = new Blob( [ data ], {
+        type: 'application/pdf'
+    } );
+    // if (pdfFileBlobURL !== null) {
+    //     URL.revokeObjectURL(pdfFileBlobURL);
+    // }
+    const pdfFileBlobURL = URL.createObjectURL( blob );
+    // for debugging purposes, open another window
+    //window.open(pdfFileBlobURL, "_blank");
+    // window.location.href = pdfFileBlobURL;
+    const a = document.createElement( 'a' );
+    a.href = pdfFileBlobURL;
+    a.download = 'test.pdf';
+    a.target = "_blank";
+    a.click();
+}
+
+window.jsonOut = ( data ) => {
+    console.log( JSON.stringify( data ) );
+};
+
+
 const api = apiFactory({baseURL: "/doc"});
 const store = getStore({}, {api});
 if (module.hot) {
